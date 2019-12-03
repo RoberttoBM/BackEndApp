@@ -1,6 +1,5 @@
-export class AsistenciasDTO {
-
-    IDPER: number;
+export interface IAsistencias {
+    IDPER?: number;
     NOMBRE: String;
     APELLIDO: String;
     DNIPER: String;
@@ -10,7 +9,5 @@ export class AsistenciasDTO {
     FALTAS: String;
     CABELLOANTIRREGLAMENTARIO: String;
     MALVESTIDO: String;
-
-
 
 }

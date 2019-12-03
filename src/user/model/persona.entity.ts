@@ -1,26 +1,41 @@
 import { Entity, Column, PrimaryColumn } from "typeorm";
 
 @Entity('IASISTENCIAS')
-export class Asistencias {
+export class Persona {
 
     @PrimaryColumn()
     IDPER: number;
 
     @Column("varchar2")
-    NOMBRE: String;
+    NOMPER: String;
 
     @Column("varchar2")
-    APELLIDO: String;
+    APEPER: String; 
+
+    @Column("char")
+    DNIPER: number;
+
+/*  @Column("char")
+    ESTPER: String;
+
+    @Column("char")
+    TIPPER: String; */
 
     @Column("varchar2")
-    DNIPER: String;
+    DIRPER: String; 
 
     @Column("varchar2")
     USUPER: String;
 
     @Column("varchar2")
     CONTRPER: String;
-  
+
+    @Column("varchar2")
+    GRAAUL: String;
+
+    @Column("varchar2")
+    SECAUL: String;
+
     @Column("varchar2")
     ASISTENCIAS: String;
 
@@ -28,9 +43,10 @@ export class Asistencias {
     FALTAS: String;
 
     @Column("varchar2")
-    CABELLOANTIRREGLAMENTARIO: String;
+    CB: String;
 
     @Column("varchar2")
-    MALVESTIDO: String;
+    MV: String;
 
+  
 }
