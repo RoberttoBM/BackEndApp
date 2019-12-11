@@ -3,16 +3,10 @@ export interface IPersona {
     NOMPER: String;
     APEPER: String;
     DNIPER: number;
-/*  ESTPER: String;
-    TIPPER: String; */
+    ESTPER: String;
+    TIPPER: String;
     DIRPER: String;
-    GRAAUL: String;
-    SECAUL: String;
     USUPER: String;
     CONTRPER: String;
-    ASISTENCIAS: String;
-    FALTAS: String;
-    CB: String;
-    MV: String;
 
 }

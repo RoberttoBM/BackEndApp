@@ -1,6 +1,9 @@
-import { Entity, Column, PrimaryColumn } from "typeorm";
+import { Entity, Column, PrimaryColumn, OneToMany } from "typeorm";
+import { Notas } from "../../notas/model/notas.entity";
+import { Asistencias } from "../../asistencias/model/asistencias.entity";
+import { Perfil } from '../../perfil/model/perfil.entity';
 
-@Entity('IASISTENCIAS')
+@Entity('PERSONA')
 export class Persona {
 
     @PrimaryColumn()
@@ -15,14 +18,14 @@ export class Persona {
     @Column("char")
     DNIPER: number;
 
-/*  @Column("char")
+    @Column("char")
     ESTPER: String;
 
     @Column("char")
-    TIPPER: String; */
+    TIPPER: String;
 
     @Column("varchar2")
-    DIRPER: String; 
+    DIRPER: String;
 
     @Column("varchar2")
     USUPER: String;
@@ -30,23 +33,13 @@ export class Persona {
     @Column("varchar2")
     CONTRPER: String;
 
-    @Column("varchar2")
-    GRAAUL: String;
+    @OneToMany(type => Notas, notas => notas.persona)
+    notas: Notas[]; 
 
-    @Column("varchar2")
-    SECAUL: String;
+    @OneToMany(type => Asistencias , asistencias => asistencias.persona)
+    asistencias: Asistencias[];
 
-    @Column("varchar2")
-    ASISTENCIAS: String;
-
-    @Column("varchar2")
-    FALTAS: String;
-
-    @Column("varchar2")
-    CB: String;
-
-    @Column("varchar2")
-    MV: String;
-
+    @OneToMany(type => Perfil, perfil => perfil.persona)
+    perfil: Perfil[];
   
 }

@@ -3,23 +3,22 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserModule } from './user/user.module';
+import { NotasModule } from './notas/notas.module';
 import { AsistenciasModule } from './asistencias/asistencias.module';
 import { AuthModule } from './auth/auth.module';
 import { HelpModule } from './help/help.module';
+import { PerfilModule } from './perfil/perfil.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
     "type": "oracle",
-    "username": "dbEdooca", 
-    "password": "Edooca-2019", 
-    //"username":"EdoocaL",
-    //"password":"123",
-    "connectString": "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=35.184.25.222)(PORT=1521))(CONNECT_DATA=(SID=XE)))",
-    //"connectString": "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521))(CONNECT_DATA=(SID=XE)))",
+    "username": "db_EDOOCA",
+    "password": "db_EDOOCA-2019",
+    "connectString": "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=34.69.77.101)(PORT=1521))(CONNECT_DATA=(SID=XE)))",
     "synchronize": false,
     "logging": true,
     "entities": [__dirname + '/**/**.entity{.ts,.js}']
-  }), UserModule, AsistenciasModule, AuthModule, UserModule, HelpModule],
+  }), UserModule, NotasModule, AsistenciasModule, AuthModule, HelpModule, PerfilModule],
   controllers: [AppController],
   providers: [AppService],
 })
